@@ -1,0 +1,1 @@
+Select * from Products where UnitPrice not in (10,12,15,17,19);
