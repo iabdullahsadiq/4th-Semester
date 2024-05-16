@@ -79,3 +79,77 @@
 --(select avg(price) from paintings where price >= 5000)
 --from paintings where price >= 5000;
 
+
+--2
+-- Create the database
+CREATE DATABASE OnlineBookstore;
+
+-- Use the newly created database
+USE OnlineBookstore;
+
+-- Create the table to store book information
+CREATE TABLE Books (
+    ISBN VARCHAR(20) PRIMARY KEY,
+    Title VARCHAR(255) NOT NULL,
+    Author VARCHAR(100) NOT NULL,
+    Genre VARCHAR(50),
+    Price DECIMAL(10, 2) NOT NULL
+);
+
+--3
+
+-- Create the database
+CREATE DATABASE CompanyManagement;
+
+-- Use the newly created database
+USE CompanyManagement;
+
+-- Create the table to store employee details
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY IDENTITY(1,1),
+    Name VARCHAR(100) NOT NULL,
+    Department VARCHAR(50) NOT NULL,
+    Position VARCHAR(50) NOT NULL,
+    Salary DECIMAL(10, 2) NOT NULL
+);
+
+--4
+
+-- Create the database
+CREATE DATABASE CRMDatabase;
+
+-- Use the newly created database
+USE CRMDatabase;
+
+-- Create the Customers table
+CREATE TABLE Customers (
+    CustomerID INT PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    Phone VARCHAR(20) NOT NULL
+);
+
+-- Create the Orders table
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    CustomerID INT,
+    OrderDate DATE,
+    TotalAmount DECIMAL(10, 2),
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+
+-- Create the Products table
+CREATE TABLE Products (
+    ProductID INT PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    Description TEXT,
+    Price DECIMAL(10, 2) NOT NULL
+);
+
+
+--1
+create database Information;
+create table Employee(empno decimal (4, 0) not null primary key, ename varchar (10) not null,  job varchar (9), mgr decimal (4, 0), hiredate date); 
+
+Alter table Employee add sal money not null, comm money not null, deptno decimal (2, 0) not null;
+
